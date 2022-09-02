@@ -10,3 +10,6 @@ PyYAML
 SQLAlchemy
 twine
 yamllint
+invoke
+isort
+flake8
