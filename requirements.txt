@@ -1,0 +1,12 @@
+black
+cx-Oracle
+flake8
+pandas
+psycopg2-binary
+pylint
+pyodbc
+pytest
+PyYAML
+SQLAlchemy
+twine
+yamllint
