@@ -94,4 +94,5 @@ To debug the unit test, place you breakpoints on the desired lines of code, and 
 
 ## Disclaimer
 
-It is recommended that the unit tests all be added manually to `.vscode/launch.json` so they can be conveniently debugged from vscode. It is FORBIDDEN to write secrets in  `.vscode/launch.json`.
++ It is recommended that the unit tests all be added manually to `.vscode/launch.json` so they can be conveniently debugged from vscode. It is FORBIDDEN to write secrets in  `.vscode/launch.json`.
++ Don't forget to specify the package's version in `.vscode/launch.json::version`.
