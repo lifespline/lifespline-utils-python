@@ -4,11 +4,11 @@
 #
 # 1 - oracle client
 sudo apt install libaio1
-mkdir $HOME/opt/oracle
-cd $HOME/opt/oracle/
 curl -o oracle_basic_client.zip https://download.oracle.com/otn_software/linux/instantclient/216000/instantclient-basic-linux.x64-21.6.0.0.0dbru.zip
 unzip oracle_basic_client.zip
 rm oracle_basic_client.zip
+mkdir -p "$HOME/opt/oracle/"
+mv instantclient* "$HOME/opt/oracle/"
 sudo sh -c "echo $HOME/opt/oracle/instantclient_21_6 > /etc/ld.so.conf.d/oracle-instantclient.conf"
 sudo ldconfig
 
