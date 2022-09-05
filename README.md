@@ -41,6 +41,6 @@ For more examples, check the test scenarios in the tests directory.
 [Read the docs][docs].
 
 [changelog]: CHANGELOG.md "Changelog"
-[docs]: docs/index.md "Dev Docs"
+[docs]: docs/entrypoint.md "Dev Docs"
 [pypi]: https://pypi.org/manage/projects/lifespline-utils-python/ "PyPi"
 [pypi-test]: https://test.pypi.org/manage/projects/lifespline-utils-python/ "PyPi"
