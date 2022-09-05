@@ -12,4 +12,6 @@ twine
 yamllint
 invoke
 isort
-flake8sphinx
+flake8
+sphinx
+autodoc
