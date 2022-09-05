@@ -12,4 +12,4 @@ twine
 yamllint
 invoke
 isort
-flake8
+flake8sphinx
