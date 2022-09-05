@@ -4,9 +4,8 @@ The document explains how to contribute to the project.
 
 # Getting Started
 
-Go through each of the sections below to learn about each topic:
+To contribute to the package you need to download the src locally. Once you've done so, [`bootstrap`](bootstrap.md) your local environment so you have all system and app dependencies installed. Having done so, you are ready to develop your own package version. You'll find documentation below to aid you on your development operations.
 
-+ [`bootstrap`](bootstrap.md) How to bootstrap your development environment to develop your package version
 + [`dev`](dev.md) How to develop and install your package version
 + [`task-runner`](./../tasks.py) The project's task-runner
 + [`debug`](debug.md) How to debug your package version (ide: `vscode`)
