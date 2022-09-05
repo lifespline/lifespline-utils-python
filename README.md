@@ -38,8 +38,9 @@ For more examples, check the test scenarios in the tests directory.
 
 # Contributing
 
-Read-the-docs at [`doc/dev.md`]().
+[Read the docs][docs].
 
 [changelog]: CHANGELOG.md "Changelog"
+[docs]: docs/README.md "Dev Docs"
 [pypi]: https://pypi.org/manage/projects/lifespline-utils-python/ "PyPi"
 [pypi-test]: https://test.pypi.org/manage/projects/lifespline-utils-python/ "PyPi"
