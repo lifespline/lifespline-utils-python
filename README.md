@@ -2,7 +2,7 @@
 
 # About
 
-`lifespline-utils` is a Python package that provides a set of python utilities for the Lifespline project. Check the [changelog] for to check the utils released each version.
+`lifespline-utils` is a Python package that provides a set of python utilities for the Lifespline project. Check the [changelog] to check the utils released each version.
 
 # Install
 
