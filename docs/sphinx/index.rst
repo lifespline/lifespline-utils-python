@@ -4,8 +4,6 @@ lifespline-utils documentation
 
 **Date:** 06-09-2022 **Version:** 1.0.0
 
-`lifespline-utils` is an open-source python utils library for the `lifespline` project.
-
 `lifespline-utils` is an open-source python utils library for the `lifespline` project. Check the [changelog] to check the utils released each version.
 
 .. toctree::
@@ -14,7 +12,7 @@ lifespline-utils documentation
 
    rst/getting_started
    rst/apireference
-   rst/dev
+   rst/contribute
 
 ==================
 Indices and tables

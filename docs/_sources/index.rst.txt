@@ -14,7 +14,7 @@ lifespline-utils documentation
 
    rst/getting_started
    rst/apireference
-   rst/dev
+   rst/contribute
 
 ==================
 Indices and tables

@@ -43,3 +43,15 @@ def ci(ctx, suite = '', test = 'all', host = '', database = '', port = '', user 
     """
 
     pass
+
+@task
+def docs(ctx):
+    """Generate documentation.
+    """
+    cmds = [
+        "cd docs/sphinx",
+        "make html",
+        "cp -a _build/html/. ..",
+        "make clean",
+    ]
+    ctx.run(';'.join(cmds))

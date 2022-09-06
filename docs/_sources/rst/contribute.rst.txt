@@ -1,6 +1,8 @@
-===
-dev
-===
+============
+Contributing
+============
+
+The documentation shows to contribute to the package.
 
 .. toctree::
    :maxdepth: 2
