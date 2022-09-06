@@ -5,8 +5,15 @@
 
 import os
 import sys
+# extract documentation from the module
 sys.path.insert(0, os.path.abspath('../../src/lifespline_utils'))
+
+# extract documentation from the task-runner
 sys.path.insert(0, os.path.abspath('../..'))
+
+# extract documenation from the module utils
+sys.path.insert(0, os.path.abspath('../../utils'))
+
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information

@@ -17,6 +17,7 @@ To contribute to the package you need to download the src locally. Once you've d
    :caption: Contents:
 
    bootstrap
+   utils
    dev
    debug
    test
