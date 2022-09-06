@@ -1,5 +1,5 @@
 .. lifespline-utils documentation master file, created by
-   sphinx-quickstart on Mon Sep  5 13:50:11 2022.
+   sphinx-quickstart on Tue Sep  6 06:07:45 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
