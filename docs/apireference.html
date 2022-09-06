@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Quickstart" href="getting_started.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Quickstart" href="getting_started.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>lifespline-utils 1.0.0 documentation</title>
+        <title>API Reference - lifespline-utils 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">lifespline-utils 1.0.0 documentation</div></a>
+      <a href="index.html"><div class="brand">lifespline-utils 1.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">lifespline-utils 1.0.0 documentation</span>
@@ -155,9 +155,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
 </ul>
 
 </div>
@@ -191,27 +191,53 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-lifespline-utils-s-documentation">
-<h1>Welcome to lifespline-utils’s documentation!<a class="headerlink" href="#welcome-to-lifespline-utils-s-documentation" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#about-lifespline-utils">About Lifespline-Utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#usage">Usage</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
-</ul>
+          <section id="module-demo">
+<span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-demo" title="Permalink to this heading">#</a></h1>
+<p>This is the documentation of the demo module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="demo.Demo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">Demo</span></span><a class="headerlink" href="#demo.Demo" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the documentation of the Demo class. You can see more details about them at <a class="reference internal" href="getting_started.html#starter"><span class="std std-ref">About Lifespline-Utils</span></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="demo.Demo.demo">
+<span class="sig-name descname"><span class="pre">demo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#demo.Demo.demo" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the documentation of the constructor of the Demo class.</p>
+<p>This is a pointer to the OtherDemo class <a class="reference internal" href="#demo.OtherDemo" title="demo.OtherDemo"><code class="xref py py-class docutils literal notranslate"><span class="pre">OtherDemo</span></code></a></p>
+<p>Usage:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">Demo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demo</span> <span class="o">=</span> <span class="n">Demo</span><span class="o">.</span><span class="n">demo</span><span class="p">()</span>
+</pre></div>
 </div>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this is a note to the documentation</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="demo.OtherDemo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">OtherDemo</span></span><a class="headerlink" href="#demo.OtherDemo" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the documentation for the OtherDemo class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="demo.OtherDemo.other_demo">
+<span class="sig-name descname"><span class="pre">other_demo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#demo.OtherDemo.other_demo" title="Permalink to this definition">#</a></dt>
+<dd><p>This is the documentation of the constructor of the OtherDemo class.</p>
+<p>This is a pointer to the Demo class <a class="reference internal" href="#demo.Demo" title="demo.Demo"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demo</span></code></a></p>
+<p>Usage:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">OtherDemo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demo</span> <span class="o">=</span> <span class="n">OtherDemo</span><span class="o">.</span><span class="n">demo</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this is a note to the documentation</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -219,16 +245,18 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="getting_started.html">
+          
+          <a class="prev-page" href="getting_started.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
+                
                 <div class="title">Quickstart</div>
+                
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
