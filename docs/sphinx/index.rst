@@ -7,7 +7,7 @@ lifespline-utils documentation
 `lifespline-utils` is an open-source python utils library for the `lifespline` project. Check the [changelog] to check the utils released each version.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    rst/getting_started

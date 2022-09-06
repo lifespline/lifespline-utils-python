@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Semantic Versioning" href="semantic_versioning.html" /><link rel="prev" title="Unit Testing" href="test.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>&lt;no title&gt; - lifespline-utils 1.0.0 documentation</title>
+        <title>Build - lifespline-utils 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -155,14 +155,19 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="contribute.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="task_runner.html">Task Runner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test.html">Unit Testing</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="contribute.html">Contributing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Install Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev.html">Dev</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debug.html">Debug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Unit Testing</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantic_versioning.html">Semantic Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html">Deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.html">CICD Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task_runner.html">Task Runner</a></li>
 </ul>
 </li>
 </ul>
@@ -192,20 +197,66 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
+          <section id="build">
+<h1>Build<a class="headerlink" href="#build" title="Permalink to this heading">#</a></h1>
+<p>The documentation shows how to build the package from source.</p>
+<section id="install-system-and-package-dependencies">
+<h2>Install System and Package dependencies<a class="headerlink" href="#install-system-and-package-dependencies" title="Permalink to this heading">#</a></h2>
+<p>Read through <a class="reference internal" href="bootstrap.html"><span class="doc">Install Dependencies</span></a>.</p>
+</section>
+<section id="build-your-own-version">
+<h2>Build Your Own Version<a class="headerlink" href="#build-your-own-version" title="Permalink to this heading">#</a></h2>
+<p>Document your new version in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and remove previous versions from <code class="docutils literal notranslate"><span class="pre">dist</span></code> otherwise <code class="docutils literal notranslate"><span class="pre">twine</span></code> won’t upload it. Build with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m build
+</pre></div>
+</div>
+<p>Install the build to the virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> .env/bin/activate
+python setup.py install
+</pre></div>
+</div>
+<p>Optionally, install the local src:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e .
+</pre></div>
+</div>
+<p>Test the build with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m lifespline_utils.connection
+</pre></div>
+</div>
+</section>
+</section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="semantic_versioning.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Semantic Versioning</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="test.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Unit Testing</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -226,8 +277,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Build</a><ul>
+<li><a class="reference internal" href="#install-system-and-package-dependencies">Install System and Package dependencies</a></li>
+<li><a class="reference internal" href="#build-your-own-version">Build Your Own Version</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

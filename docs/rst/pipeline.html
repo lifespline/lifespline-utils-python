@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Task Runner" href="task_runner.html" /><link rel="prev" title="Deploy" href="deploy.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>&lt;no title&gt; - lifespline-utils 1.0.0 documentation</title>
+        <title>CICD Pipeline - lifespline-utils 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -155,13 +155,21 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quickstart</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="task_runner.html">Task Runner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html#running-unit-tests">Running Unit Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html#debugging-unit-tests">Debugging Unit Tests</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="contribute.html">Contributing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Install Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev.html">Dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantic_versioning.html">Semantic Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html">Deploy</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">CICD Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task_runner.html">Task Runner</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -189,20 +197,75 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
+          <section id="cicd-pipeline">
+<h1>CICD Pipeline<a class="headerlink" href="#cicd-pipeline" title="Permalink to this heading">#</a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<p>The documentation shows how to configure a CICD pipeline with <code class="docutils literal notranslate"><span class="pre">github</span> <span class="pre">actions</span></code>.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>The automated agent authenticates by fetching the <cite>pat</cite> directly from your access tokens. The contents of <cite>azure-pipelines.yml</cite> must contain:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>yml
+variables:</p>
+<blockquote>
+<div><p>feed_name: &lt;org&gt;
+dist: dist/*</p>
+</div></blockquote>
+<p>steps:
+- script: |</p>
+<blockquote>
+<div><p># cmds here</p>
+</div></blockquote>
+<ul>
+<li><p>task: TwineAuthenticate&#64;1
+inputs:</p>
+<blockquote>
+<div><p>artifactFeed: ${{ variables.feed_name }}</p>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>script: |</dt><dd><p># cmds here</p>
+<p>python3 -m twine upload -r ${{ variables.feed_name }} –config-file $(PYPIRC_PATH) ${{ variables.dist }}</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</section>
+</section>
+
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="task_runner.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Task Runner</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="deploy.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Deploy</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -223,8 +286,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CICD Pipeline</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

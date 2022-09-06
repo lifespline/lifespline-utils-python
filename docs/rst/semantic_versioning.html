@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Unit Testing" href="test.html" /><link rel="prev" title="Dev" href="dev.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Deploy" href="deploy.html" /><link rel="prev" title="Build" href="build.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
-        <title>Debug - lifespline-utils 1.0.0 documentation</title>
+        <title>Semantic Versioning - lifespline-utils 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -161,10 +161,10 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="contribute.html">Contributing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Install Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev.html">Dev</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html">Debug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Unit Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="semantic_versioning.html">Semantic Versioning</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Semantic Versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy.html">Deploy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipeline.html">CICD Pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="task_runner.html">Task Runner</a></li>
@@ -203,47 +203,34 @@
           </label>
         </div>
         <article role="main">
-          <section id="debug">
-<h1>Debug<a class="headerlink" href="#debug" title="Permalink to this heading">#</a></h1>
-<p>The documentation shows how to configure vscode to debug the code.</p>
-<section id="vscode-configuration-python-interpreter">
-<h2>VSCode Configuration: Python Interpreter<a class="headerlink" href="#vscode-configuration-python-interpreter" title="Permalink to this heading">#</a></h2>
-<p>The debugger needs to know the path to the libs installed in your project’s virtual environment. Define the python interpreter path with:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ctrl+shift+P</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;Python:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Entire</span> <span class="pre">Workspace</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+Enter</span> <span class="pre">interpreter</span> <span class="pre">path...</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Find...</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;your-project-abs-path&gt;/.env/bin/python3</span></code></p></li>
-</ol>
+          <section id="semantic-versioning">
+<h1>Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permalink to this heading">#</a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<p>The Documentation shows how to version your project with <code class="docutils literal notranslate"><span class="pre">minimal</span> <span class="pre">semantic</span> <span class="pre">versioning</span></code>.</p>
 </section>
-<section id="id1">
-<h2>Debug<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code> contains unit test configurations for the vscode debugger.</p>
-<p>The example below defines the configuration to debug the command <code class="docutils literal notranslate"><span class="pre">inv</span> <span class="pre">ci</span> <span class="pre">--suite</span> <span class="pre">utils</span> <span class="pre">--user</span> <span class="pre">&lt;user&gt;</span> <span class="pre">--password</span> <span class="pre">&lt;password&gt;</span></code>. Notice how the <code class="docutils literal notranslate"><span class="pre">invoke</span></code> module is specified. Add to <code class="docutils literal notranslate"><span class="pre">.vscode/launch.json::configurations</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;suite: redshift&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invoke&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;python&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/.env/bin/python3&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;ci&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--suite&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;redshift&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;--user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;user&gt;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;--password&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<section id="disclaimer">
-<h3>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading">#</a></h3>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;.&lt;MINOR&gt;.&lt;PATCH&gt;[-&lt;identifier&gt;]</span></code>, where:</p>
 <ul class="simple">
-<li><p>It is recommended that the unit tests all be added manually to <code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code> so they can be conveniently debugged from vscode. It is FORBIDDEN to write secrets in  <code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code>.</p></li>
-<li><p>Don’t forget to specify the package’s version in <code class="docutils literal notranslate"><span class="pre">.vscode/launch.json::version</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAJOR</span></code> backwards incompatible changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MINOR</span></code> add backwards compatible functionality (non-negative integer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATCH</span></code> add backwards compatible bug fixes (non-negative integer). A bug fix is that which fixes incorrect behaviour.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[-&lt;identifier&gt;]</span></code> optional pre-release identifiers. Examples:
+* 1.0.0-alpha
+* 1.0.0-alpha.1
+* 1.0.0-0.3.7
+* 1.0.0-x.7.z.92
+* 1.0.0-x-y-z.–.</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;MINOR&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;PATCH&gt;</span></code> are incrementing positive integer values. When <code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;</span></code> increases, <code class="docutils literal notranslate"><span class="pre">&lt;MINOR&gt;</span></code> resets to 0. When <code class="docutils literal notranslate"><span class="pre">&lt;MINOR&gt;</span></code> increases, <code class="docutils literal notranslate"><span class="pre">&lt;PATCH&gt;</span></code> resets to 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[-&lt;identifier&gt;]</span></code> is an alphanumeric value of the format <code class="docutils literal notranslate"><span class="pre">[-.a-zA-Z0-9]+</span></code>. It MUST follow the rules that apply to <code class="docutils literal notranslate"><span class="pre">&lt;MAJOR&gt;.&lt;MINOR&gt;.&lt;PATCH&gt;</span></code>.</p>
 </section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://semver.org/">semver</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -252,23 +239,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="test.html">
+          <a class="next-page" href="deploy.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Unit Testing</div>
+                <div class="title">Deploy</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="dev.html">
+          <a class="prev-page" href="build.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dev</div>
+                <div class="title">Build</div>
                 
               </div>
             </a>
@@ -304,12 +291,10 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Debug</a><ul>
-<li><a class="reference internal" href="#vscode-configuration-python-interpreter">VSCode Configuration: Python Interpreter</a></li>
-<li><a class="reference internal" href="#id1">Debug</a><ul>
-<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Semantic Versioning</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
