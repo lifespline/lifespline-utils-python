@@ -10,7 +10,8 @@ Welcome to lifespline-utils's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   getting_started
+   apireference
 
 Indices and tables
 ==================
