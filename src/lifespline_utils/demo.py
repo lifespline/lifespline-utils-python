@@ -2,7 +2,7 @@
 """
 
 class Demo:
-    """This is the documentation of the Demo class. You can see more details about them at :ref:`starter`.
+    """This is the documentation of the Demo class.
     """
 
     def __init__(self) -> None:

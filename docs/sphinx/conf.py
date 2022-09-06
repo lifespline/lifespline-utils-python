@@ -6,6 +6,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../src/lifespline_utils'))
+sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -23,7 +24,10 @@ extensions = [
     # test docstring
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
+    # reference other pages
+    'sphinx.ext.autosectionlabel',
 ]
+autosectionlabel_prefix_document = True
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
