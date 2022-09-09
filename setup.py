@@ -41,8 +41,8 @@ host: str = "github.com"
 version: str = "1.0.0"
 org: str = "lifespline"
 project: str = "lifespline-utils-python"
-author: str = 'lifespline'
-email: str = 'lifespline@fastmail.com'
+author: str = "lifespline"
+email: str = "lifespline@fastmail.com"
 short_description: str = "A collection of python utilities for the Lifespline project"
 
 setup(
