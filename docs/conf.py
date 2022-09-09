@@ -9,6 +9,8 @@ import sys
 # pyproject.toml file and make the code installable, so it behaves like any 
 # other Python library. However, the sys.path approach is simpler.
 sys.path.insert(0, os.path.abspath("../src/lifespline_utils"))
+sys.path.insert(0, os.path.abspath("../utils"))
+sys.path.insert(0, os.path.abspath(".."))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
