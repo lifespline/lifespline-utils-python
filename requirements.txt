@@ -16,7 +16,7 @@ PyYAML
 # docs
 sphinx
 autodoc
-furbo
+furo
 
 # connection
 psycopg2-binary
