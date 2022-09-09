@@ -13,5 +13,7 @@ yamllint
 invoke
 isort
 flake8
+
+# docs
 sphinx
 autodoc
