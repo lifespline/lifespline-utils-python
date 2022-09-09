@@ -16,14 +16,14 @@ To contribute to the package you need to download the src locally. Once you've d
    :maxdepth: 1
    :caption: Contents:
 
-   bootstrap
-   utils
-   dev
-   debug
-   test
-   build
-   semantic_versioning
-   document
-   deploy
-   pipeline
-   task_runner
+   contributing/bootstrap
+   contributing/utils
+   contributing/dev
+   contributing/debug
+   contributing/test
+   contributing/build
+   contributing/semantic_versioning
+   contributing/document
+   contributing/deploy
+   contributing/pipeline
+   contributing/task_runner

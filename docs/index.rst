@@ -1,15 +1,13 @@
-.. lifespline-utils-python documentation master file, created by
-   sphinx-quickstart on Fri Sep  9 10:02:14 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to lifespline-utils-python's documentation!
-===================================================
+================================
+lifespline-utils's documentation
+================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   src/contributing
+   src/getting_started
 
 
 Indices and tables

@@ -9,7 +9,7 @@ The package is hosted in `PyPI`_, so you can pull the package to your local virt
 
 .. code::
 
-   pip install lifespline-utils==1.0.0
+   pip install lifespline-utils
 
 Test the installation with:
 
@@ -29,8 +29,6 @@ Create a new redshift connection:
    >>> conn: RedshiftConnection = RedshiftConnection()
    user name: <username>
    password: <password>
-   INFO: Connecting to source: <host>
-   ╰─(connection.py:124)
    >>> conn.read_sql("select USER from dual")
             USER
    0   <username>
