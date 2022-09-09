@@ -1,47 +1,41 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""Configuration file for the Sphinx documentation builder."""
+
+import os
+import sys
 
 # Note
 #
-# An alternative to changing the sys.path variable is to create a pyproject.toml
-# file and make the code installable, so it behaves like any other Python library.
-# However, the sys.path approach is simpler.
-import os
-import sys
-# extract documentation from the module
-sys.path.insert(0, os.path.abspath('../src/lifespline_utils'))
+# An alternative to changing the sys.path variable is to create a
+# pyproject.toml file and make the code installable, so it behaves like any 
+# other Python library. However, the sys.path approach is simpler.
+sys.path.insert(0, os.path.abspath("../src/lifespline_utils"))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'lifespline-utils-python'
-copyright = '2022, lifespline'
-author = 'lifespline'
-release = '1.0.0'
+PROJECT = "lifespline-utils-python"
+COPYRIGHT = "2022, lifespline"
+AUTHOR = "lifespline"
+RELEASE = "1.0.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     # display docs build time
-    'sphinx.ext.duration',
-
+    "sphinx.ext.duration",
     # process docstrings in src
-    'sphinx.ext.autodoc',
-
+    "sphinx.ext.autodoc",
     # test code snippets
-    'sphinx.ext.doctest',
+    "sphinx.ext.doctest",
 ]
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'furo'
-html_static_path = ['_static']
+HTML_THEME = "furo"
+html_static_path = ["_static"]
