@@ -13,23 +13,23 @@ Getting Started
 The automated agent authenticates by fetching the `pat` directly from your access tokens. The contents of `azure-pipelines.yml` must contain:
 
 
-```yml
-variables:
-  feed_name: <org>
-  dist: dist/*
+.. code-block:: yml
 
-steps:
-- script: |
-    # cmds here
+  variables:
+    feed_name: <org>
+    dist: dist/*
 
-- task: TwineAuthenticate@1
-  inputs:
-    artifactFeed: ${{ variables.feed_name }}
+  steps:
+  - script: |
+      # cmds here
 
-- script: |
-    # cmds here
+  - task: TwineAuthenticate@1
+    inputs:
+      artifactFeed: ${{ variables.feed_name }}
 
-    python3 -m twine \
-    upload -r ${{ variables.feed_name }} \
-    --config-file $(PYPIRC_PATH) ${{ variables.dist }}
-```
+  - script: |
+      # cmds here
+
+      python3 -m twine \
+      upload -r ${{ variables.feed_name }} \
+      --config-file $(PYPIRC_PATH) ${{ variables.dist }}

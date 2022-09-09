@@ -21,7 +21,7 @@ Debugging
 VSCode Configuration: Python Interpreter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Read the `VSCode Python Interpreter`_ documentation.
+Read the ``VSCode Python Interpreter`` documentation.
 
 Debugging
 ~~~~~~~~~
