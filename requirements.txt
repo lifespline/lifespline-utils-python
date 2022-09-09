@@ -1,19 +1,31 @@
-black
-cx-Oracle
-flake8
+# data
 pandas
-psycopg2-binary
-pylint
-pyodbc
-pytest
-PyYAML
-SQLAlchemy
+
+# python
 twine
-yamllint
-invoke
+
+# lint and format
 isort
 flake8
+yamllint
+pylint
+black
+flake8
+PyYAML
 
 # docs
 sphinx
 autodoc
+furbo
+
+# connection
+psycopg2-binary
+cx-Oracle
+SQLAlchemy
+pyodbc
+
+# unit test
+pytest
+
+# task runner
+invoke
